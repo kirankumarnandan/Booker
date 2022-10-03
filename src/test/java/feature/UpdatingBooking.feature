@@ -1,13 +1,12 @@
-@bookerAPI @updateBooking
+@updateBookingDeatils
 Feature: To update a booking in restful-booker
 
-  Background: create an auth token
+  Background: Creating Authentication details
     Given user has access to endpoint "CreateAuth"
     When user creates a auth token with credential "admin" & "password123"
     Then user should get the response code 200
 
-  @updateBookingDataTable
-  Scenario Outline: To update a booking using cucumber Data Table
+  Scenario Outline:Update Booking details
     Given user has access to endpoint "CreateBookingAPI"
     When user makes a request to view booking IDs
     And user updates the details of a booking
