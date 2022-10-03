@@ -1,0 +1,13 @@
+	{
+	"createBooking1": {
+		"firstname": "TestData",
+		"lastname": "One",
+		"totalprice": "2500",
+		"depositpaid": "true",
+		"bookingdates": {
+		"checkin":"2021-05-15",
+		"checkout":"2021-06-02"
+		},
+		"additionalneeds":"Snacks"
+	}
+}
