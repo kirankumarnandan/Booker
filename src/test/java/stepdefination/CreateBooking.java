@@ -50,8 +50,7 @@ public class CreateBooking {
     assertNotNull("Booking not created", bookingDTO);
     LOG.info("Newly created booking ID: "+bookingDTO.getBookingid());
     context.session.put("bookingID", bookingDTO.getBookingid());
- //      validateBookingData(new JSONObject(bookingData), bookingDTO);
-   //     validateBookingData((JSONObject) bookingData , bookingDTO);
+
         String placeID = bookingDTO.getBookingid() ;
         System.out.println("Place ID: "+placeID);
         String firstname =  bookingDTO.getBooking().getFirstname() ;
@@ -74,18 +73,4 @@ public class CreateBooking {
 
 
     }
-
-//    private void validateBookingData(JSONObject bookingData, BookingDTO bookingDTO) {
-//        LOG.info(bookingData);
-//        assertNotNull("Booking ID missing", bookingDTO.getBookingid());
-//        assertEquals("First Name did not match", bookingData.get("firstname"), bookingDTO.getBooking().getFirstname());
-//        assertEquals("Last Name did not match", bookingData.get("lastname"), bookingDTO.getBooking().getLastname());
-//        assertEquals("Total Price did not match", bookingData.get("totalprice"), bookingDTO.getBooking().getTotalprice());
-//        assertEquals("Deposit Paid did not match", bookingData.get("depositpaid"), bookingDTO.getBooking().getDepositpaid());
-//        assertEquals("Additional Needs did not match", bookingData.get("additionalneeds"), bookingDTO.getBooking().getAdditionalneeds());
-//        assertEquals("Check in Date did not match", bookingData.get("checkin"), bookingDTO.getBooking().getBookingdates().getCheckin());
-//        assertEquals("Check out Date did not match", bookingData.get("checkout"), bookingDTO.getBooking().getBookingdates().getCheckout());
-//    }
-
-
 }

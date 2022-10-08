@@ -3,10 +3,12 @@ package stepdefination;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.json.simple.JSONObject;
 import org.junit.Assert;
 import utils.EndPoint;
 import utils.TestContext;
@@ -49,5 +51,18 @@ public class BookingDetails {
         EndPoint resourceAPI=EndPoint.valueOf(resource);
         System.out.println(resourceAPI.getResource());
         context.session.put("endpoint", resourceAPI.getResource());
+    }
+
+
+    @When ( "user creates auth with username and password" )
+    public void userCreatesAuthWithUsernameAndPassword ( ) throws FileNotFoundException {
+        JSONObject credentials = new JSONObject();
+        credentials.put("username","admin");
+        credentials.put("password","password123");
+        context.response = context.requestSetup().body(credentials.toString())
+                .when().post(context.session.get("endpoint").toString());
+        String token = context.response.path("token");
+        LOG.info("Auth Token: "+token);
+        context.session.put("token", "token="+token);
     }
 }

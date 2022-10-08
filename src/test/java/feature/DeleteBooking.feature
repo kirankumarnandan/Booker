@@ -3,7 +3,7 @@ Feature: To delete a booking in restful-booker
 
   Background: Creating Authentication details
     Given user has access to endpoint "CreateAuth"
-    When user creates a auth token with credential "admin" & "password123"
+    When user creates auth with username and password
     Then user should get the response code 200
 
 

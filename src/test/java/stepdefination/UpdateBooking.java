@@ -23,18 +23,6 @@ public class UpdateBooking {
         this.context = context;
     }
 
-    @When ("user creates a auth token with credential {string} & {string}")
-    public void userCreatesAAuthTokenWithCredential(String username, String password) throws FileNotFoundException {
-        JSONObject credentials = new JSONObject();
-        credentials.put("username", username);
-        credentials.put("password", password);
-        context.response = context.requestSetup().body(credentials.toString())
-                .when().post(context.session.get("endpoint").toString());
-        String token = context.response.path("token");
-        LOG.info("Auth Token: "+token);
-        context.session.put("token", "token="+token);
-    }
-
 
     @And ( "user updates the details of a booking" )
     public void userUpdatesABooking( DataTable dataTable) throws FileNotFoundException {

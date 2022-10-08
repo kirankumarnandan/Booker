@@ -1,23 +1,13 @@
-Request method:	POST
-Request URI:	https://restful-booker.herokuapp.com/booking
+Request method:	DELETE
+Request URI:	https://restful-booker.herokuapp.com/booking/5640
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
-Path params:	<none>
+Path params:	bookingID=5640
 Headers:		Accept=application/json
+				Authorization=Basic YWRtaW46cGFzc3dvcmQxMjM=
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-    "firstname": "Kumar",
-    "additionalneeds": "Lunch",
-    "bookingdates": {
-        "checkin": "Hall is well",
-        "checkout": "2022-07-10"
-    },
-    "totalprice": 2400,
-    "depositpaid": false,
-    "lastname": "nanda"
-}
+Body:			<none>
